@@ -1,0 +1,21 @@
+{
+  "name": "@zhaoyao91/check-env",
+  "version": "0.0.0",
+  "description": "Check environment variables.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap"
+  },
+  "keywords": [
+    "zhaoyao91",
+    "check-env"
+  ],
+  "repository": "github.com/zhaoyao91-npm/check-env",
+  "author": "zhaoyao91@aliyun.com",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.17.1",
+    "tap": "^13.1.9",
+    "uuid": "^3.3.2"
+  }
+}
