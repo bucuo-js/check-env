@@ -14,25 +14,29 @@ function checkEnv(settings) {
 
     let value = env[key];
 
-    if (optional && value === undefined) {
-      results[key] = defaultValue;
-    } else {
-      if (!optional && value === undefined) {
-        throw new Error(`env <${key}> is missing`);
-      }
-
-      if (!checkIn(value)) {
-        throw new Error(`in value <${value}> of env <${key}> is invalid`);
-      }
-
-      value = map(value);
-
-      if (!checkOut(value)) {
-        throw new Error(`out value <${value}> of env <${key}> is invalid`);
-      }
-
-      results[key] = value;
+    if (value === undefined) {
+      value = defaultValue;
     }
+
+    if (optional && value === undefined) {
+      return;
+    }
+
+    if (value === undefined) {
+      throw new Error(`env <${key}> is missing`);
+    }
+
+    if (!checkIn(value)) {
+      throw new Error(`in value <${value}> of env <${key}> is invalid`);
+    }
+
+    value = map(value);
+
+    if (!checkOut(value)) {
+      throw new Error(`out value <${value}> of env <${key}> is invalid`);
+    }
+
+    results[key] = value;
   });
 
   return results;

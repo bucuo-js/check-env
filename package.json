@@ -1,6 +1,6 @@
 {
   "name": "@zhaoyao91/check-env",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Check environment variables.",
   "main": "index.js",
   "scripts": {

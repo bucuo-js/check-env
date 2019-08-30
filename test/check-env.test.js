@@ -94,3 +94,13 @@ tap.test("checkOut failed", t => {
 
   t.end();
 });
+
+tap.test("default value is mapped", t => {
+  const key = genKey();
+
+  const env = checkEnv({ [key]: { default: "some", map: x => x + x } });
+
+  t.equal(env[key], "somesome");
+
+  t.end();
+});
